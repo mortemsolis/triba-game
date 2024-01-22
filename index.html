@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Projekat 2: Triba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="flex">
+        <ul class="menu" id="mainMenu">
+            <li>Triba</li>
+            <li>
+                <a class="button" onclick="playerSelect()">Nova igra</a>
+                <a class="button" onclick="instructionsPage()">Upute</a>
+                <a class="button" onclick="aboutPage()">O projektu</a>
+            </li>
+        </ul>
+
+        <ul class="menu" id="playerSelect">
+            <li>Ko igra prvi?</li>
+            <li>
+                <a class="button" onclick="gridSelect(); currentPlayer = 1">Igrač A</a>
+                <a class="button" onclick="gridSelect(); currentPlayer = 2">Igrač B</a>
+            </li>
+        </ul>
+
+        <ul class="menu" id="gridSelect">
+            <li>Odaberite layout</li>
+            <li>
+                <a class="button" onclick="layout = 0; startGame()">6 x 6</a>
+                <a class="button" onclick="layout = 1; startGame()">8 x 8</a>
+                <a class="button" onclick="layout = 2; startGame()">12 x 8</a>
+                <a class="button" onclick="layout = 3; startGame()">Krug</a>
+            </li>
+        </ul>
+
+        <ul class="menu" id="playAgain">
+            <li id="winner"></li>
+            <li>
+                <a class="button" onclick="startGame()">Igraj ponovo</a>
+                <a class="button" onclick="location.reload()">Meni</a>
+            </li>
+        </ul>
+
+        <ul class="menu" id="about">
+            <li>O projektu</li>
+            <li>
+                <p class="just-text">
+                    Predmet: Web Programiranje I<br>
+                    Profesor: Sead Delalić<br>
+                    Asistent: Irhad Fejzić<br>
+                    <br>
+                    Studij: Informacione Tehnologije<br>
+                    Fakultet: Prirodno-matematički fakultet, Sarajevo<br>
+                    <br>
+                    Naziv projekta: "Projekat 2: Triba"<br>
+                    <br>
+                    Ime i prezime autora: Emin Ligata<br>
+                    eminligata@hotmail.com
+                </p>
+            </li>
+            <li>
+                <a class="button" onclick="location.reload()">Nazad</a>
+            </li>
+        </ul>
+
+        <ul class="menu" id="instructions">
+            <li>Upute</li>
+            <li>
+                <p class="just-text">Igrica se sastoji od mreže mxn tačaka, gdje su m i n parni prirodni brojevi. Dva igrača igraju
+                    naizmjenično. Svaki igrač u svom potezu bira trougao tako što izabere tri tačke iz mreže koje ne
+                    leže na istoj pravoj. Trouglovi se ne smiju sjeći, te ne smiju dva trougla imati zajednički vrh.
+                    Trouglovi se mogu nalaziti jedan unutar drugog. Igra je završena kada jedan igrač ostane bez
+                    poteza. Igrač koji je ostao bez poteza gubi. 
+                    </p>
+            </li>
+            <li>
+                <a class="button" onclick="location.reload()">Nazad</a>
+            </li>
+        </ul>
+    <div class="flex" id="gameGrid">
+
+        <canvas id="mainCanvas" width="1200" height="800" class="gameGrid"></canvas>
+        <p id="player"></p>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
